@@ -7,3 +7,7 @@
     src=/home/tetter/local.key
     dest=../keys/local.key.{{scale}}
     flat=yes
+
+- name: Fix permissions on downloaded key
+  delegate_to: localhost
+  shell: chmod 0600 ../keys/local.key.{{scale}}
