@@ -1,0 +1,9 @@
+- name: List directory
+  shell: sudo cp -f /root/vagrant/local.key .; sudo chown tetter:tetter /home/tetter/local.key
+
+- name: Retrieve local key from {{ scale }} and store as keys/local.key.{{scale}}
+  become: root
+  fetch:
+    src=/home/tetter/local.key
+    dest=../keys/local.key.{{scale}}
+    flat=yes

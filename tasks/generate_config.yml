@@ -1,0 +1,5 @@
+- name: Generate csshx script file {{scale}}.sh
+  delegate_to: localhost
+  template:
+    src=csshx.config.j2
+    dest=/tmp/csshx.{{scale}}.config

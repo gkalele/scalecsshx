@@ -1,0 +1,18 @@
+{% for host in hosts %}
+Host {{scale}}-{{host.name}}
+  User vagrant
+  Hostname {{host.ip}}
+  Compression yes
+  CheckHostIP no
+  StrictHostKeyChecking no
+  ProxyCommand ssh tetter@{{scale}} nc %h 22
+  IdentityFile /Users/gkalele/sss/keys/local.key.{{scale}}
+  
+{% endfor %}
+
+Host {{scale}}-{{scale}}
+  User tetter
+  Hostname {{scale}}
+  Compression yes
+  CheckHostIP no
+  StrictHostKeyChecking no

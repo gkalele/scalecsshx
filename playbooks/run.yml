@@ -1,0 +1,10 @@
+- hosts: scale
+  become: root
+  any_errors_fatal: true
+  tasks:
+  - import_tasks: ../tasks/fetch_local_key.yml
+  - import_tasks: ../tasks/generate_config.yml
+  - import_tasks: ../tasks/run_csshx.yml
+
+    
+

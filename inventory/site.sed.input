@@ -1,0 +1,7 @@
+[all:vars]
+
+scale=__SCALE__
+hosts=[{"name": "bare1", "ip":"192.168.10.21"}, {"name": "bare2", "ip":"192.168.10.22"} , {"name": "kube1", "ip":"192.168.10.11"}, {"name": "kube2", "ip":"192.168.10.12"}, {"name": "kube3", "ip":"192.168.10.13"}]
+
+[scale]
+__SCALE__ ansible_ssh_host=__SCALE__ ansible_user=tetter

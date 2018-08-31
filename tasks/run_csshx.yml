@@ -1,0 +1,7 @@
+- name: Check pwd
+  delegate_to: localhost
+  shell: pwd
+
+- name: Run csshx
+  delegate_to: localhost
+  shell: for i in kube1 kube2 kube3 bare1 bare2 master scale14; do echo {{scale}}-$i; done | xargs csshx --ssh_args="-F /tmp/csshx.{{scale}}.config"
