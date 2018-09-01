@@ -7,7 +7,7 @@ Host {{scale}}-{{host.name}}
   StrictHostKeyChecking no
   PasswordAuthentication no
   ProxyCommand ssh tetter@{{scale}} nc %h 22
-  IdentityFile /Users/gkalele/sss/keys/local.key.{{scale}}
+  IdentityFile {{playbook_dir}}/../keys/local.key.{{scale}}
   
 {% endfor %}
 
